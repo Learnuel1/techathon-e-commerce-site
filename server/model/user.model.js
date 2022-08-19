@@ -16,8 +16,13 @@ const UserSchema = new Schema({
     required: true
   },
   type: {
-    type: String, enum: ["Admin", "user"],
+    type: String, enum: ["Admin", "User"],
   required: true
+  },
+  status: {
+    type: String, enum: ["Blocked","Unblock"],
+    required: true,
+    default:"Unblock"
   },
   address: {
     type: String,
