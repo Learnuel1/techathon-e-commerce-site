@@ -2,20 +2,20 @@
 ## GROUP 2 TEAM 8 TASK
 **This project is to encourage team collaboraton among mentees**
 
-**TASK OVERVIEW**
-Login/Register for visiting application
-Browse through different products
-Filter products based on category, price etc..
-Like/review products
-Add them to cart/wishlist
-Edit/Delete his/her account
+## TASK OVERVIEW
+- Login/Register for visiting application
+- Browse through different products
+- Filter products based on category, price etc..
+- Like/review products
+- Add them to cart/wishlist
+- Edit/Delete his/her account
 
 Admin can do following tasks on admin dashboard
 
-Add/list products
-Update product details, quantity etc..
-View list of all the users
-Block/unblock a particular user
+- Add/list products
+- Update product details, quantity etc..
+- View list of all the users
+- Block/unblock a particular user
 **Note:** product designers should keep their ui/ux simple
 
 # DESCRIPTION
@@ -27,6 +27,8 @@ This project is to build a functional e-commernce website with the above stated 
 - /auth/admin
 - /auth/register and
 - /auth/refreshtoken
+
+
 **Note**
 - /auth/admin
 - POST /auth/register and
@@ -37,11 +39,6 @@ This project is to build a functional e-commernce website with the above stated 
 2. Implement CRUD for the User model (GET, POST, PUT and DELETE) for **/user**:
 - Only admin can **delete** all types of users.
 - A user can only **edit or delete** his/her account.
-## WORK FLOW
-This repor will use the following branch for all contributors
-1. Introduction: _ This is the branch for all initial features in process.
-2. Review : _ This branch handles all featurs that have been finalized.
-3. Main : _ This the contains all features that have be approved and merged to the codebase.
 
 3. Implement CRUD for the Product model (GET, POST, PUT,PATCH and DELETE) for **/product**:
 - Products can be searched by id, category, price, name, etc through the **/product/search** route.
@@ -58,7 +55,7 @@ The database to be used for this project will be mongo database.
 
 ## USER
 ```
-		_id :    -->ObjectId,
+_id :    -->ObjectId,
 username:    -->String,
 password:    -->String,
 	 email:    -->String,
@@ -70,12 +67,12 @@ createdAt:     -->Date,
 updatedAt:     -->Date
 ```
 ## USERLOG
-		```
+```
 userid:      -->ObjectId,
 description: -->String
 	createdAt:  -->Date,
 	updatedAt:  -->Date
-  ```
+```
 ## PRODUCT
 ```
 	_id:     -->ObjectId,
