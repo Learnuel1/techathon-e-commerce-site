@@ -24,4 +24,20 @@ exports.usernameExist = async (username) => {
   if (exist)
     return true;
   return false;
+};
+
+exports.logoutService = async (data) => {
+  try {
+    const user = await UserModel.findById(data.id);
+    if (!user)
+      return { error: "User Not found" };
+    if (user.refreshToken === "none")
+      return { error: "User is already logged out" };
+    user.refreshToken = "none";
+    user.save();
+   
+    return { success: "User logged out successfully"};
+  } catch (error) {
+    return { error: error };
+   }
 }
