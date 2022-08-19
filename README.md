@@ -55,7 +55,7 @@ The database to be used for this project will be mongo database.
 
 ## USER
 ```
-		_id :    -->ObjectId,
+_id :    -->ObjectId,
 username:    -->String,
 password:    -->String,
 	 email:    -->String,
