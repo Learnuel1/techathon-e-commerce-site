@@ -102,3 +102,4 @@ updatedAt:    -->Date,
 - Your commit should have a body (Message) explaining or listing the changes/implementations
 - If there is a hack in your code please state the **purpose** and **why**
 - Finally try to write readably and structured code.
+- Always sumbit task for review.
