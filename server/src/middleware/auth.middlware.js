@@ -1,17 +1,18 @@
 const { verify } = require("jsonwebtoken");
+const { ApiError } = require("../utils/apiError");
 const { customError } = require("./error.middleware");
 
 exports.userRequired = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
     if (!authorization)
-      return next(customError("Authorization is required"), 401);
+      return next(ApiError.unauthorized("Authorization is required"));
     const token = authorization.split("")[1];
     const payload = verify(token, process.env.JWT_SECRET_TOKEN);
     if (!payload)
-      return next(customError("Token expired"), 401);
+      return next(ApiError.customEror("Token expired"), 401);
     if (payload.status.toLowerCase() === "blocked")
-      return next(customError("user account has be blocked"), 401);
+      return next(ApiError.customEror("user account has be blocked"), 401);
     req.body.id = payload.id;
     req.body.type = payload.type;
     req.body.status = payload.status;
@@ -30,15 +31,15 @@ exports.adminRequired = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
     if (!authorization)
-      return next(customError("Authorization is required"), 401);
+      return next(ApiError.unauthorized ("Authorization is required"));
     const token = authorization.split("")[1];
     const payload = verify(token, process.env.JWT_SECRET_TOKEN);
     if (!payload)
-      return next(customError("Token expired"), 401);
+      return next(ApiError.customEror("Token expired"), 401);
     if (payload.status.toLowerCase() === "blocked")
-      return next(customError("user account has been blocked"), 401);
+      return next(ApiError.customEror("user account has been blocked"), 401);
     if (payload.type.toLowerCase() !== "admin")
-      return next(customError("Access Denied"), 401);
+      return next(ApiError.unauthorized("Access Denied"));
     req.body.id = payload.id;
     req.body.type = payload.type;
     req.body.status = payload.status;

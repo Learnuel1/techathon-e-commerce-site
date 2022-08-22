@@ -16,12 +16,13 @@ Admin can do following tasks on admin dashboard
 - Update product details, quantity etc..
 - View list of all the users
 - Block/unblock a particular user
+
 **Note:** product designers should keep their ui/ux simple
 
 # DESCRIPTION
 This project is to build a functional e-commernce website with the above stated functionalities.
 ## APPLICATION FEATURES
-1. Implement the following authentication methods using TWT:
+1. Implement the following authentication methods using JWT:
 - /auth/login
 - /auth/logout
 - /auth/admin
@@ -55,41 +56,41 @@ The database to be used for this project will be mongo database.
 
 ## USER
 ```
-_id :    -->ObjectId,
-username:    -->String,
-password:    -->String,
-	 email:    -->String,
- address:    -->String,
-	status:    -->String->enum["Blocked","Unblock"],
-  	type:    -->String ->enum["Admin","User"],
-refreshToken: -->[String],
-createdAt:     -->Date,
-updatedAt:     -->Date
+	_id :    -->ObjectId,
+	username:    -->String,
+	password:    -->String,
+		email:    -->String,
+	address:    -->String,
+		status:    -->String->enum["Blocked","Unblock"],
+			type:    -->String ->enum["Admin","User"],
+	refreshToken: -->[String],
+	createdAt:     -->Date,
+	updatedAt:     -->Date
 ```
 ## USERLOG
 ```
 userid:      -->ObjectId,
 description: -->String
-	createdAt:  -->Date,
-	updatedAt:  -->Date
+createdAt:  -->Date,
+updatedAt:  -->Date
 ```
 ## PRODUCT
 ```
-	_id:     -->ObjectId,
-	name:    -->String,
+_id:     -->ObjectId,
+name:    -->String,
 category:  -->String,
 quantity:  -->Number.
-	price:   -->Number,
-	userid:  -->ObjectId(ref)
+price:   -->Number,
+userid:  -->ObjectId(ref)
 createdAt: -->Date,
 updatedAt: -->Date
 ```
 
 ## REVIEW 
 ```
-	_id:       -->ObjectId,
+_id:       -->ObjectId,
 productid:    -->ObjectId(ref),
-     like:   -->Number,
+		like:   -->Number,
 description:  -->String,
 createdAt:    -->Date.
 updatedAt:    -->Date,
