@@ -5,7 +5,6 @@ err.status = 404;
 next(err);
 };
 exports.customError =(msg="Incompleted data field supplied", status = 400) => {
-   
   const err = new Error(msg);
   err.status = status;
   return err;
