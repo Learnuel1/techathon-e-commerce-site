@@ -81,11 +81,11 @@ name:    -->String,
 category:  -->String,
 quantity:  -->Number.
 price:   -->Number,
+model:		--> String
 userid:  -->ObjectId(ref)
 createdAt: -->Date,
 updatedAt: -->Date
 ```
-
 ## REVIEW 
 ```
 _id:       -->ObjectId,
